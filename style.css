@@ -1,26 +1,56 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
+/* Basic reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
 }
 
 h1, h2 {
   color: #333;
 }
 
+/* Center the forms on the screen */
+#loginPage, #signUpPage, #homePage {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 input {
-  padding: 10px;
-  margin: 10px;
-  width: 200px;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 button {
-  padding: 10px;
-  margin: 10px;
+  width: 100%;
+  padding: 12px;
   background-color: #007BFF;
   color: white;
   border: none;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -28,13 +58,53 @@ button:hover {
   background-color: #0056b3;
 }
 
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Layout for friend list and messages */
 #friendsList, #messageList {
   list-style-type: none;
+  padding: 0;
 }
 
 #friendsList li, #messageList li {
-  padding: 5px;
-  background-color: #f1f1f1;
-  margin: 5px;
+  background-color: #f9f9f9;
+  margin: 5px 0;
+  padding: 10px;
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#friendsList li {
+  cursor: pointer;
+}
+
+#friendsList li:hover {
+  background-color: #f1f1f1;
+}
+
+/* Add extra spacing for input fields */
+#addFriendUsername, #messageInput {
+  width: calc(100% - 24px);
+}
+
+/* Mobile and Tablet responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  #loginPage, #signUpPage, #homePage {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  input, button {
+    font-size: 14px;
+  }
 }
